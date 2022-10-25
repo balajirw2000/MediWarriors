@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MED NEW</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+
+            background-color: #1a2035;
+
+        }
+
+        .card-header {
+            margin: 0px 15px 0;
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            height: 100%;
+            width: 80%;
+            border-radius: 6px;
+            position: relative;
+            margin-top: -50px;
+            font-weight: bold;
+            font-size: 45px;
+            color: white;
+            padding-top: 5px;
+            text-align: center;
+            margin-left: 7%;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+
+
+        #i {
+            background: linear-gradient(60deg, #d22824, #da3a36);
+        }
+
+        #j {
+            background: linear-gradient(60deg, #f5700c, #ff9800);
+        }
+
+        #k {
+            background: linear-gradient(60deg, #7b1fa2, #913f9e);
+        }
+
+
+
+
+        li {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #8b92a9;
+        }
+
+        p {
+            font-size: 20px;
+            color: #a9afbbd1;
+        }
+
+
+
+
+
+        li.active>a {
+            background: linear-gradient(60deg, #7b1fa2, #913f9e);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav li:not(.active) a {
+            color: #a9afbbd1;
+        }
+
+
+
+
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .card {
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background: #202940;
+            margin-left: 20px;
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #a9afbbd1;
+            padding-bottom: 50px;
+        }
+
+        .e4 {
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background: #202940;
+            margin-left: 20px;
+            width: 100%;
+            height: 100%;
+            margin-top: 10%;
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #a9afbbd1;
+            padding-bottom: 10px;
+        }
+
+        #e3 {
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background: #202940;
+            margin-left: 20px;
+            width: 100%;
+            margin-top: 10%;
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #a9afbbd1;
+            padding-bottom: 10px;
+        }
+
+        label {
+
+            margin-left: 30px;
+            color: #a9afbbd1;
+            font-size: 15px;
+            margin-top: 30px;
+        }
+
+        input,
+        select {
+            margin-top: 0px;
+            margin-left: 10px;
+        }
+
+        ::placeholder {
+            color: black;
+
+        }
+
+        #details {
+            color: white;
+        }
+
+        .submit-btn-md {
+            background-color: #029eb1;
+            font-weight: 100;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+
+
+        /* /SpO2 Table/  */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 4px;
+            color: #a9afbbd1;
+        }
+
+
+        th {
+            background-color: #029eb1;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        #editable {
+            color: rgb(128, 128, 128);
+        }
+
+        .submit-btn {
+            background-color: #029eb1;
+            font-weight: 100;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 0px;
+        }
+
+        input[type=text] {
+            box-sizing: border-box;
+        }
+
+        .tableText input {
+            margin: 0px;
+        }
+
+
+        /* /PRESCRIPTION/  */
+        input {
+            color: black;
+            font-size: 15px;
+        }
+
+        select {
+            color: black;
+        }
+
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #myTableData {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        #myTableData td,
+        #myTableData th {
+            margin-top: 10px;
+            padding: 10px;
+            padding-right: 15px;
+            width: auto;
+            font-size: 15px;
+            max-width: 180px;
+            word-wrap: break-word
+        }
+
+        button {
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            color: white;
+            margin-top: -30px;
+            margin-right: 10px;
+            border-radius: 5px;
+            height: 30px;
+            border: none;
+        }
+
+        .btn10 {
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            color: white;
+            margin-right: 10px;
+            border-radius: 5px;
+            height: 25px;
+            border: none;
+            margin-left: 50px;
+        }
+
+        p .submit-btn {
+            margin-bottom: 10px;
+        }
+
+        /* /PRESC DESC/  */
+        #presc {
+            color: white;
+            font-family: Georgia, serif;
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #presc tr,
+        #presc td {
+            margin-top: 10px;
+            padding: 10px;
+            width: auto;
+            font-size: 15px;
+        }
+
+        #presc th {
+            margin-top: 10px;
+            padding: 10px;
+            width: auto;
+            font-size: 20px;
+        }
+
+
+        #presc-card {
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        label {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="{% url 'patientlist' %}" style="color: white; font-size: 20px;">Go Back...</a>
+
+    <div class="row content" style="padding-right: -5px;">
+
+        <div class="col-sm-6" style="padding-left: 5px;">
+
+            <div class="accordion" style="padding-bottom:25px" id="accordionExample">
+
+                <div class="e4" id="1">
+                    <div class="" id="a1">
+                        <h2 class="mb-0">
+                            <button class="card-header btn  collapsed" type="button" data-toggle="collapse" id="c"
+                                data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                PERSONAL DETAILS
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse1" class="collapse" aria-labelledby="a1" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <p>
+                                FILE_NO: <span id="details"> {{Fileno}}</span><br>
+                                NAME: <span id="details"> {{Name}}</span><br>
+                                ID: <span id="details"> {{ID}}</span><br>
+                                SEX: <span id="details"> {{Sex}}</span><br>
+                                AGE IN YEARS: <span id="details"> {{Age}}</span><br>
+                                DATE (given in form): <span id="details"> {{Date}}</span><br>
+                                MOBILE FOR WHATSAPP AND SMS: <span id="details"> {{Mobile}}</span><br>
+                                EMAIL: <span id="details"> {{Email}}</span><br>
+                                LOCATION / ADDRESS: <span id="details"> {{Location}}</span><br>
+                                TIMESTAMP: <span id="details"> {{Timestamp}}</span><br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion" style="padding-bottom:25px" id="accordionExample">
+                <div class="card" id="1">
+                    <div class="" id="a2">
+                        <h2 class="mb-0">
+                            <button class="card-header btn  collapsed" type="button" data-toggle="collapse" id="d"
+                                data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                MEDICAL DETAILS
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapse2" class="collapse" aria-labelledby="a2" data-parent="#accordionExample">
+
+                        <div class="card-body">
+                            <p>
+                                PATIENT ID: <span id="details"> {{ID}}</span><br>
+                                NAME:<span id="details"> {{Name}}</span><br>
+                                RT-PCR: <span id="details"> {{RTPCR}}</span><br>
+                                RT-PCR-CT VALUE: <span id="details"> {{CT}}</span><br>
+                                PAST/EXSISTING HEALTH PROBLEMS:<span id="details"> {{Past}}</span><br>
+                                SYMPTOMS: <span id="details"> {{Symptoms}}</span><br>
+                                DATE OF FIRST SYMPTOM: <span id="details"> {{Firstsymp}}</span><br>
+                                SpO2 AT THE TIME OF FORM FILLING:<span id="details"> {{Currspo2}}</span><br>
+                                VACCINATION STATUS:<span id="details"> {{Vacstat}}</span><br>
+                                DATE OF FIRST VACCINE SHOT:<span id="details"> {{1stvac}}</span><br>
+                                DATE OF SECOND VACCINE SHOT:<span id="details"> {{2ndvac}}</span><br>
+                                VACCINE RELATED COMPLICATIONS:<span id="details"> {{vaccomp}}</span><br>
+                                ANY OTHER RECENT INVESTIGATIONS(eg Ddimer): <span id="details">
+                                    {{Other_recent_investigation}}</span><br>
+                                TREATMENT TAKING AT THE TIME OF FORM FILLING:<span id="details">
+                                    {{curr_treatment}}</span><br>
+                                TREATMENT PRESCRIBED WHILE FORM FILLING:<span id="details">
+                                    {{Treatment_prescribed_while_filling_form}}</span><br>
+
+                            <form action="{% url 'medupdate'  %}" id="nmo" method="post">
+                                {% csrf_token %}
+                                <p>
+                                    <br>
+                                    HRCT-CT SCORE: <input type="text" id="editable1" name="hrct" placeholder="{{hrct}}"
+                                        style="color: black;" disabled><br>
+                                    CRP VALUES: <input type="text" id="editable2" name="crp" placeholder="{{crp}}"
+                                        style="color: black;" disabled><br><br>
+
+                                    Investigations: Hb, TLC, Nutrophils, Lynphosities, Platlet Clount, RDW and ESR(Enter
+                                    respective details separated by commas): <input type="text" id="editable3"
+                                        name="others" placeholder="{{multiple_vals}}" style="color: black;"
+                                        disabled><br>
+
+                                    ANY OTHER INV. (Ddimer) : <input type="text" id="editable6" name="anyother"
+                                        placeholder="_" style="color: black;" disabled><br>
+                                    <!-- Hb_TLC_Nutrophils_Lynphosities_PlatletClount_RDW_and_ESR: <input type="text" id="editable"
+                                name="fname" placeholder="NA" disabled><br> -->
+
+                                    New Symptoms: <input type="text" id="editable8" name="newsymp" placeholder="_"
+                                        style="color: black;" disabled><br>
+                                    <input type="hidden" name="pat_id" id="abc" value={{ID}}>
+
+                                <div style="float: right; margin-right: 25px;"><button onclick="medEdit()"
+                                        id="changed-edit-btn" class="submit-btn">EDIT</button></div>
+
+                                <div style="float: right; margin-right: 10px;">
+                                    <button type="submit" onclick="medSubmit()" id="changed-submit-btn"
+                                        class="submit-btn" style="background-color: #929292;" disabled>SUBMIT</button>
+                                </div>
+
+                                </p>
+
+                            </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-6" id="meddet" style="padding-left:10px;">
+
+            <div class="card" id="e3">
+                <div class="" id="a3">
+                    <h2 class="mb-0">
+                        <button class="card-header btn  collapsed" type="button" data-toggle="collapse" id="d"
+                            data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                            SpO2
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse3" class="collapse" aria-labelledby="a3" data-parent="#accordionExample">
+                    <div class="card-body">
+
+
+                        <table>
+
+                            <tr>
+                                <td>DAY 1</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv1" style='color: black;'
+                                        placeholder="80-85" disabled>
+                                </td>
+
+                                <td>DAY 2</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv2" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 3</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv3" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 4</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv4" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 5</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv5" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DAY 6</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv6" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 7</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv7" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 8</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv8" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 9</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv9" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 10</td>
+                                <td id="addText">
+                                    <input type='text' size='2' id="textboxDiv10" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>DAY 11</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv11" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 12</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv12" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 13</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv13" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+                                <td>DAY 14</td>
+                                <td id="addText">
+                                    <div class="tableText"></div>
+                                    <input type='text' size='2' id="textboxDiv14" style='color: black;' placeholder=""
+                                        disabled>
+                                </td>
+
+
+
+                                <td><button onclick="tableEdit()" id="changed-edit-btn-1"
+                                        class="submit-btn">EDIT</button>
+                                </td>
+
+                                <td>
+                                    <button type="submit" onclick="tableSubmit()" id="changed-submit-btn-1"
+                                        class="submit-btn" style="background-color: #929292;" disabled>SUBMIT</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card" id="e3" style="margin-top: 140px;">
+                <div class="" id="a4">
+                    <h2 class="mb-0">
+                        <button class="card-header btn  collapse show" type="button" data-toggle="collapse" id="f"
+                            data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                            PRESCRIPTION
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse4" class="collapse collapse show" aria-labelledby="a4" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-1 "></div>
+                            <div id="newElementId"></div>
+                            <div class="" id="card1">
+                                <div class="" id="card-b">
+                                    <div class="row" style="margin-top: 5px; margin-left: -30px;">
+                                        <div class="col-sm-3">
+                                            <label for="meds" style="margin-left: 25px;">Medicine</label>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <label for="mg" style="margin-left: 25px;">Power</label>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <label for="time" style="margin-left: 25px;">Time</label>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <label for="notes" style="margin-left: 25px;">Notes</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-row text-black">
+                                                <input list="myInputd" style="width:104%" placeholder="Search.."
+                                                    id="myInput" onkeyup="filterFunction()">
+
+                                                <datalist id="myInputd">
+                                                    <option value="Ivermectin">
+                                                    <option value="Doxt">
+                                                    <option value="Tab Famotidine / Pantoprezole">
+                                                    <option value="Tab Colchicine / Zycolchin">
+                                                    <option value="Tab Vitamin C">
+                                                    <option value="Tab Zinc">
+                                                    <option value="Tab Vit D3">
+                                                    <option value="Tab Mefenamic Acid">
+                                                    <option value="Prednisylone/ Wysolone / Omnacortil">
+                                                    <option value="Afogatran / Dabigatran">
+                                                    <option value="Rivaroxaban">
+                                                    <option value="Novonorm">
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <input type="text" style="width:123%" name="mg" id="mg" placeholder="mg"
+                                                required />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <input type="text" style="width:130%" name="time" id="time"
+                                                placeholder="time" />
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="text" style="width:115%" name="notes" id="notes"
+                                                placeholder="notes" />
+                                        </div>
+
+                                        <input type="button" value="+" onclick="Javascript:addRow()" class="btn10" />
+                                    </div>
+
+                                    <div style="text-align:center">
+                                        <div class="form-row text-black">
+                                            <table id="myTableData" cellpadding="2">
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td><b>Medicine</b></td>
+                                                    <td><b>Power</b></td>
+                                                    <td><b>Time</b></td>
+                                                    <td><b>Notes</b></td>
+                                                </tr>
+
+                                            </table>
+                                            <form action="sub/" method="post" id="myForm">
+
+                                                <input type="hidden" name="list" id="abc">
+                                                <button type="button1">SUBMIT</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card" id="presc-card">
+                <p style='text-align:center'> Prescription 1</p>
+                <table id="presc">
+                    <tr style="border-bottom:solid; border-bottom-color: coral;">
+                        <th><b>Medicine</b></th>
+                        <th><b>Power</b></th>
+                        <th><b>Dose</b></th>
+                        <th><b>Notes</b></th>
+                    </tr>
+
+                    <tr>
+                        <td>Doxt</td>
+                        <td>100mg</td>
+                        <td>1-1-1</td>
+                        <td style="max-width: 140px; word-wrap: break-word"> 3 days once a day (if Azithral has
+                            already been taken do not take this</td>
+                    </tr>
+                    <tr>
+                        <td>Famotidine</td>
+                        <td>40 mg</td>
+                        <td>1-0-0</td>
+                        <td style="max-width: 140px; word-wrap: break-word"> once a day (antacid)</td>
+                    </tr>
+                </table>
+                <div style="text-align:center">
+                    <button onclick="editfield('presc')"> Edit </button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-sm-2"></div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+
+    <!--MEDICAL DETAILS-->
+
+    <script>
+
+        function tableEdit() {
+
+            $(document).ready(function () {
+
+                var placeholder1 = document.getElementById("textboxDiv1").placeholder;
+                if (typeof placeholder1 === 'undefined' || placeholder1 === null || placeholder1 === '') {
+                    document.getElementById("textboxDiv1").removeAttribute("disabled");
+                }
+
+                var placeholder2 = document.getElementById("textboxDiv2").placeholder;
+                if (typeof placeholder2 === 'undefined' || placeholder2 === null || placeholder2 === '') {
+                    document.getElementById("textboxDiv2").removeAttribute("disabled");
+                }
+
+                var placeholder3 = document.getElementById("textboxDiv3").placeholder;
+                if (typeof placeholder3 === 'undefined' || placeholder3 === null || placeholder3 === '') {
+                    document.getElementById("textboxDiv3").removeAttribute("disabled");
+                }
+
+                var placeholder4 = document.getElementById("textboxDiv4").placeholder;
+                if (typeof placeholder4 === 'undefined' || placeholder4 === null || placeholder4 === '') {
+                    document.getElementById("textboxDiv4").removeAttribute("disabled");
+                }
+
+                var placeholder5 = document.getElementById("textboxDiv5").placeholder;
+                if (typeof placeholder5 === 'undefined' || placeholder5 === null || placeholder5 === '') {
+                    document.getElementById("textboxDiv5").removeAttribute("disabled");
+                }
+
+                var placeholder6 = document.getElementById("textboxDiv6").placeholder;
+                if (typeof placeholder6 === 'undefined' || placeholder6 === null || placeholder6 === '') {
+                    document.getElementById("textboxDiv6").removeAttribute("disabled");
+                }
+
+                var placeholder7 = document.getElementById("textboxDiv7").placeholder;
+                if (typeof placeholder7 === 'undefined' || placeholder7 === null || placeholder7 === '') {
+                    document.getElementById("textboxDiv7").removeAttribute("disabled");
+                }
+
+                var placeholder8 = document.getElementById("textboxDiv8").placeholder;
+                if (typeof placeholder8 === 'undefined' || placeholder8 === null || placeholder8 === '') {
+                    document.getElementById("textboxDiv8").removeAttribute("disabled");
+                }
+
+                var placeholder9 = document.getElementById("textboxDiv9").placeholder;
+                if (typeof placeholder9 === 'undefined' || placeholder9 === null || placeholder9 === '') {
+                    document.getElementById("textboxDiv9").removeAttribute("disabled");
+                }
+
+                var placeholder10 = document.getElementById("textboxDiv10").placeholder;
+                if (typeof placeholder10 === 'undefined' || placeholder10 === null || placeholder10 === '') {
+                    document.getElementById("textboxDiv10").removeAttribute("disabled");
+                }
+
+                var placeholder11 = document.getElementById("textboxDiv11").placeholder;
+                if (typeof placeholder11 === 'undefined' || placeholder11 === null || placeholder11 === '') {
+                    document.getElementById("textboxDiv11").removeAttribute("disabled");
+                }
+
+                var placeholder12 = document.getElementById("textboxDiv12").placeholder;
+                if (typeof placeholder12 === 'undefined' || placeholder12 === null || placeholder12 === '') {
+                    document.getElementById("textboxDiv12").removeAttribute("disabled");
+                }
+
+                var placeholder13 = document.getElementById("textboxDiv13").placeholder;
+                if (typeof placeholder13 === 'undefined' || placeholder13 === null || placeholder13 === '') {
+                    document.getElementById("textboxDiv13").removeAttribute("disabled");
+                }
+
+                var placeholder14 = document.getElementById("textboxDiv14").placeholder;
+                if (typeof placeholder14 === 'undefined' || placeholder14 === null || placeholder14 === '') {
+                    document.getElementById("textboxDiv14").removeAttribute("disabled");
+                }
+            });
+
+            document.getElementById("changed-edit-btn-1").style.background = "#929292";
+            document.getElementById("changed-submit-btn-1").style.background = "#029eb1";
+
+            document.getElementById("changed-edit-btn-1").disabled = true;
+            document.getElementById("changed-submit-btn-1").disabled = false;
+
+        }
+    </script>
+
+
+    <script>
+        function tableSubmit() {
+            document.getElementById("changed-submit-btn-1").style.background = "#929292";
+            document.getElementById("changed-edit-btn-1").style.background = "#029eb1";
+
+            document.getElementById("changed-edit-btn-1").disabled = false;
+            document.getElementById("changed-submit-btn-1").disabled = true;
+        }
+    </script>
+
+    <script>
+        function medEdit() {
+            document.getElementById("changed-edit-btn").style.background = "#929292";
+            document.getElementById("changed-submit-btn").style.background = "#029eb1";
+
+            document.getElementById("changed-submit-btn").disabled = false;
+            document.getElementById("changed-edit-btn").disabled = true;
+
+            document.getElementById("editable1").disabled = false;
+            document.getElementById("editable2").disabled = false;
+            document.getElementById("editable3").disabled = false;
+            document.getElementById("editable6").disabled = false;
+            document.getElementById("editable8").disabled = false;
+        }
+    </script>
+
+    <script>
+        function medSubmit() {
+
+            console.log("Helowdddorld")
+            document.getElementById("nmo").submit();
+            console.log("Heloworld")
+            document.getElementById("changed-submit-btn").style.background = "#929292";
+            document.getElementById("changed-edit-btn").style.background = "#029eb1";
+
+            document.getElementById("changed-edit-btn").disabled = false;
+            document.getElementById("changed-submit-btn").disabled = true;
+
+
+
+        }
+    </script>
+
+
+    <!--PRESCRIPTION-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script type="text/JavaScript">
+    var lis = [];
+    function addRow() {
+        var medicine = document.getElementById("myInput");
+        var mg = document.getElementById("mg");
+        var time = document.getElementById("time");
+        var notes = document.getElementById("notes");
+        var table = document.getElementById("myTableData");
+
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+
+        row.insertCell(0).innerHTML= '<input style="margin-top: 5px" type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+        row.insertCell(1).innerHTML= medicine.value;
+        row.insertCell(2).innerHTML= mg.value;
+        row.insertCell(3).innerHTML = time.value;
+        row.insertCell(4).innerHTML = notes.value;
+        var dict = {};
+        dict.medicine = medicine.value;
+        dict.mg = mg.value;
+        dict.time = time.value;
+        dict.notes = notes.value;
+        lis.push(dict);
+        console.log(lis);
+
+        document.getElementById("myInput").value="";
+        document.getElementById("mg").value="";
+        document.getElementById("time").value="";
+        document.getElementById("notes").value="";
+
+
+    }
+
+      $('#button1').on('click', function(event) {
+        var data = lis;
+
+        var table = document.getElementById("myTableData");
+
+        var rows = table.rows;
+        var i = rows.length;
+        while (--i) {
+            rows[i].parentNode.removeChild(rows[i]);
+        }
+        $.ajax({
+            method: 'POST',
+            url: 'sub/',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}',
+            },
+            data: JSON.stringify(data),
+            success: function() {
+                console.log('Success!');
+            },
+            error: function() {
+                console.log('Error...');
+            },
+        });
+    });
+
+      function myFunction() {
+            var jsonArray = JSON.parse(JSON.stringify(lis));
+            console.log(jsonArray);
+            document.getElementById("abc").value=jsonArray;
+            document.getElementById("myForm").submit();
+      }
+
+        function deleteRow(obj) {
+
+            var index = obj.parentNode.parentNode.rowIndex;
+            var table = document.getElementById("myTableData");
+            console.log(index);
+            table.deleteRow(index);
+            lis.splice(index-1, 1);
+        }
+
+        function createNewElement() {
+            var txtNewInputBox = document.createElement('div');
+            txtNewInputBox.innerHTML = '<div class="card" id="card1"> <div class="card-header ">1</div> <div class="card-body " id="card-b"> <form method="post" action="Downloadf"> <div class="form-row text-black"> <label for="meds">Medicine</label> <select id="medicine" name="medicine"> <option value="1">Prednisylone</option> <option value="2">Wysolone</option> <option value="3">Omnacortil</option> <option value="4">Afogatran</option> <option value="5">Dabigatran</option> <option value="6">Rivaroxaban</option> <option value="7">Novonorm</option> </select> <input type="text" name="mg" placeholder="mg"/> </div> </form><input type="button" value="+" onclick="createNewElement();" /> </div> </div>'
+
+            document.getElementById("newElementId").appendChild(txtNewInputBox);
+        }
+
+        function filterFunction() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("myDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+                } else {
+                a[i].style.display = "none";
+                }
+            }
+        }
+
+    </script>
+
+    <!--PRESC DESC-->
+    <script>
+        function editfield(val) {
+            var tablenew = document.getElementById("presc");
+            var rowCountnew = tablenew.rows.length;
+            console.log(rowCountnew);
+
+            for (i = 1; i < rowCountnew; i++) {
+                var table = document.getElementById("myTableData");
+                var rowCount = table.rows.length;
+                var row = table.insertRow(rowCount);
+
+                var objCells = tablenew.rows.item(i).cells;
+                console.log(objCells);
+                row.insertCell(0).innerHTML = '<input style="margin-top: 5px" type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
+                for (var j = 0; j < objCells.length; j++) {
+                    row.insertCell(j + 1).innerHTML = objCells.item(j).innerHTML;
+                    console.log(objCells.item(j).innerHTML);
+                }
+                var dict = {};
+                dict.medicine = objCells.item(0).innerHTML;
+                dict.mg = objCells.item(1).innerHTML;
+                dict.time = objCells.item(2).innerHTML;
+                dict.notes = objCells.item(3).innerHTML;
+                console.log(dict)
+                lis.push(dict);
+                console.log(lis);
+            }
+        }
+    </script>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        console.log("hi");
+
+        var str = '';
+        var str1 = '';
+        var str2 = '';
+        {% for n, i in combi2 %}
+
+
+        console.log("hi");
+        str += '<option value="' + "{{i}}  {{n}}" + '" />';
+        {% endfor %}
+
+        {%for drs in drs %}
+
+
+        console.log("hi");
+        str1 += '<option value="' + "{{drs}}" + '" />';
+        {% endfor %}
+
+        {%for n, i in combi3 %}
+
+
+        console.log("hi");
+        str2 += '<option value="' + "{{i}}  {{n}}" + '" />';
+        {% endfor %}
+
+    </script>
+    <style>
+        /* Set heights of the grid so .sidenav can be 100% (adjust as needed) */
+        #myFilter {
+            box-sizing: border-box;
+            width: 50%;
+            padding: 10px;
+            margin-left: 20%;
+        }
+
+        .row.content {
+            height: 670px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #262b3e;
+            height: 100%;
+            position: fixed;
+        }
+
+        /* On small screens, set height to 'auto' for the grid */
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #edf2fb;
+
+        }
+
+        .card {
+            border-radius: 6px;
+            background: #264653;
+
+            width: 100%;
+            height: 50px;
+            padding-top: 10px;
+            margin-left: 5px;
+
+            margin-top: 10px;
+        }
+
+
+        .card-header {
+
+            background: linear-gradient(60deg, #288c6c, #4ea752);
+
+            border-radius: 6px;
+            position: relative;
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            width: 20%;
+            height: 40px;
+            float: left;
+            font-size: 20px;
+            margin-top: -5px;
+            padding-top: 5px;
+            color: white;
+            text-align: center;
+
+            margin-right: 10px;
+            margin-left: 5px;
+        }
+
+
+
+
+
+
+
+        li {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #8b92a9;
+        }
+
+        p {
+            font-size: 20px;
+            color: #a9afbbd1;
+        }
+
+        #event1 {
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            width: 70px;
+            height: 70px;
+            float: left;
+            font-size: 30px;
+            margin-top: 30px;
+            padding-top: 0px;
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:active {
+            background: rgb(3, 80, 32);
+        }
+
+
+        li.active>a {
+            background: linear-gradient(60deg, #7b1fa2, #913f9e);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav li:not(.active) a {
+            color: #a9afbbd1;
+        }
+
+        svg {
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .col-sm-10 {
+            margin-left: 16%;
+        }
+
+        .card-body {
+
+            font-size: 20px;
+            color: white;
+
+        }
+
+        #disease,
+        #speech {
+            background: linear-gradient(60deg, #288c6c, #4ea752);
+            color: white;
+            margin-right: 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #speech {
+            width: 150px;
+            margin-left: 9%;
+            margin-bottom: 10px;
+            background: linear-gradient(60deg, #d22824, #da3a36);
+            margin-top: 20px
+        }
+
+        img {
+            margin: 0;
+            width: 120px;
+            height: 70px
+        }
+
+        #assform {
+            margin-right: -10px;
+            color: black;
+            margin-left: 10px;
+        }
+
+        .e4 {
+            border-radius: 15px;
+            margin-bottom: 50px;
+            background: #fffffc;
+            width: 90%;
+            margin-right:0;
+            height: 100%;
+            margin-top: 10%;
+            padding-left: 20px;
+            padding-top: 10px;
+            color: #a9afbbd1;
+            padding-bottom: 10px;
+            border-style: solid;
+            border-color: coral;
+        }
+
+        .card-headerfrm {
+            margin: 0px 15px 0;
+            background-color: #264653;
+            height: 100%;
+            width: 80%;
+            border-radius: 6px;
+            position: relative;
+            margin-top: -50px;
+            font-weight: bold;
+            font-size: 45px;
+            color: white;
+            padding-top: 5px;
+            text-align: center;
+            margin-left: 7%;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        button {
+            background-color: #264653;
+            color: white;
+            margin-top: -30px;
+            margin-right: 10px;
+            border-radius: 5px;
+            height: 30px;
+            border: none;
+        }
+
+        /-----------Navbar----------/
+
+        nav {
+            background-color: rgb(36, 41, 46);
+            overflow: auto;
+            width: 105%;
+            position: fixed;
+            top: 0;
+        }
+
+        .blank {
+            display: inline;
+            min-width: 180px;
+        }
+
+        .nav-left {
+            align-items: center;
+            display: flex;
+            padding-left: 20px;
+        }
+
+        nav a,
+        i {
+            color: white;
+            padding: 14px 10px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav input[type=text] {
+            border: none;
+            height: 4.5vh;
+            width: 200px;
+            border-radius: 2px;
+            background-color: rgb(64 68 72);
+        }
+
+        /-----------Navbar Ends----------/
+    </style>
+</head>
+
+<body>
+
+    <!---------Navbar-------->
+    <nav class="navbar" style="background-color: rgb(36, 41, 46)">
+
+        <img style="padding-left: 20px;"
+            src="https://firebasestorage.googleapis.com/v0/b/covidcrisis-312210.appspot.com/o/logo1.png?alt=media&token=b8a535e3-88a3-4a73-807b-5add5601a832">
+        <div class="blank"></div>
+
+        <li style="float: right; list-style-type: none; padding-right: 20px;"><a href="{% url 'logout' %}">LOGOUT</a></li>
+    </nav>
+    <!--------Navbar ends--------->
+
+    <div class="container-fluid">
+        <div class="row content">
+
+            <br>
+            <div class="col-sm-7" style="padding-left:10px">
+                <p style="font-weight:bold; color:#264653;">PATIENTS</p>
+                <div class="row" style="margin-bottom:15px;" id="myItems">
+                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
+                        placeholder="Search for names..">
+                    <button type="button" id="speech" onclick="runSpeechRecognition()">Speech to
+                        Text</button>&nbsp;<span id="action" style="color:black;"></span><br>
+
+                    <div>
+
+                        <button type="button" id="disease" value="D" onclick="diseaseFunction('D')">Diabetes</button>
+                        <button type="button" id="disease" value="O" onclick="diseaseFunction('O')">Obesity</button>
+                        <button type="button" id="disease" value="S" onclick="diseaseFunction('S')">Heart
+                            Stroke</button>
+                        <button type="button" id="disease" value="H" onclick="diseaseFunction('H')">High BP</button>
+
+                    </div>
+                    <div>
+                        <button type="button" id="disease" value="T" onclick="diseaseFunction('T')">Stent</button>
+                        <button type="button" id="disease" value="C" onclick="diseaseFunction('C')">CKD</button>
+                        <button type="button" id="disease" value="L" onclick="diseaseFunction('L')">Liver</button>
+                        <button type="button" id="disease" value="B" onclick="diseaseFunction('B')">Bypass</button>
+
+                    </div>
+                    <div>
+                        <button type="button" id="disease" value="D" onclick="alldiseaseFunction()">ALL
+                            PATIENTS</button>
+
+                    </div>
+
+
+
+                    <div class="col-sm-11 ">
+                        {%for name,id in combi%}
+
+                        <div class="card" id="card1">
+                            <a href="{% url 'patientdetails' ID=id %}" style="text-decoration:none;">
+                                <div class="card-header ">{{id}}</div>
+                                <div class="card-body " id="card-b">{{name}}</div>
+                            </a>
+                        </div>
+
+                        {%endfor%}
+
+                    </div>
+                    <div class="col-sm-1 "></div>
+                </div>
+            </div>
+
+
+
+            <div class="row content">
+
+                <div class="col-sm-5" style="padding: 0;">
+                    <form action="{% url 'movepatient'  %}" id="move" method="post">
+                        {% csrf_token %}
+                        <div class="e4" id="1">
+                            <div class="" id="a1">
+                                <h2 class="mb-0">
+                                    <div class="card-headerfrm">
+                                        ASSIGN DOCTOR
+                                    </div>
+                                </h2>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    <label id="assform">Patient's ID : </label>
+                                <div class="form-row text-black">
+                                    <input list="myInputd" name="patient_id"
+                                        style="width:70%;  color:black; height: 40px;" placeholder="Search..">
+
+                                    <datalist id="myInputd">
+
+                                    </datalist>
+                                </div>
+                                <br>
+                                <label for="sel1" id="assform">Assign To Doctor :</label>
+
+                                <div class="form-row text-black">
+                                    <input list="myInputd2" name="doctor2"
+                                        style="width:70%;   color:black; height: 40px;" placeholder="Search.."
+                                        id="myInput2">
+
+                                    <datalist id="myInputd2">
+
+                                    </datalist>
+                                </div>
+
+                                <button id="accbtn" type="submit" style="float: right;">
+                                    ASSIGN
+                                </button>
+
+                                </p>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+
+
+
+                    <div class="e4" id="1">
+                        <div class="" id="a1">
+                            <h2 class="mb-0">
+                                <div class="card-headerfrm">
+                                    DISCHARGE
+                                </div>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <label id="assform">Patient's ID : </label>
+                            <form action="{% url 'dischargepatient'  %}" id="discharge" method="post">
+                                {% csrf_token %}
+                                <div class="form-row text-black">
+                                    <input list="myInputd3" name="patid" style="width:70%;  color:black;  height: 40px;"
+                                        placeholder="Search.." id="myInput3">
+
+                                    <datalist id="myInputd3">
+
+                                    </datalist>
+                                </div>
+
+                                <br>
+
+                                <button id="accbtn" type="submit" style="float: right;">
+                                    DISCHARGE
+                                </button>
+
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <script type="text/javascript">
+                console.log("hi");
+
+
+                document.getElementById("myInputd").innerHTML = str;
+
+
+
+                document.getElementById("myInputd2").innerHTML = str1;
+
+                document.getElementById("myInputd3").innerHTML = str2;
+
+
+            </script>
+            <script type="text/javascript">
+
+
+
+                function runSpeechRecognition() {
+                    // get output div reference
+
+                    var action = document.getElementById("action");
+                    // new speech recognition object
+                    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+                    var recognition = new SpeechRecognition();
+
+                    // This runs when the speech recognition service starts
+                    recognition.onstart = function () {
+                        action.innerHTML = "<small>listening, please speak...</small>";
+                    };
+
+                    recognition.onspeechend = function () {
+                        action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+                        recognition.stop();
+                    };
+
+                    // This runs when the speech recognition service returns result
+                    recognition.onresult = function (event) {
+                        var transcript = event.results[0][0].transcript;
+                        var confidence = event.results[0][0].confidence;
+                        var input, filter, cards, cardContainer, title, i;
+                        action.innerHTML = "<small>" + transcript + "</small>";
+                        input = event.results[0][0].transcript;
+                        filter = input.toUpperCase();
+                        cardContainer = document.getElementById("myItems");
+                        cards = cardContainer.getElementsByClassName("card");
+                        for (i = 0; i < cards.length; i++) {
+                            title = cards[i].querySelector(".card-body ");
+                            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                                cards[i].style.display = "";
+                            } else {
+                                cards[i].style.display = "none";
+                            }
+                        }
+                    };
+                    recognition.start();
+
+                };
+
+
+                // start recognition
+
+                function myFunction() {
+                    var input, filter, cards, cardContainer, h5, title, i;
+                    input = document.getElementById("myFilter");
+                    filter = input.value.toUpperCase();
+                    cardContainer = document.getElementById("myItems");
+                    cards = cardContainer.getElementsByClassName("card");
+                    for (i = 0; i < cards.length; i++) {
+                        title = cards[i].querySelector(".card-body ");
+                        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                            cards[i].style.display = "";
+                        } else {
+                            cards[i].style.display = "none";
+                        }
+                    }
+                }
+                function diseaseFunction(diseases) {
+                    var input, filter, cards, cardContainer, h5, title, i;
+                    input = diseases;
+                    cardContainer = document.getElementById("myItems");
+                    cards = cardContainer.getElementsByClassName("card");
+                    for (i = 0; i < cards.length; i++) {
+                        title = cards[i].querySelector(".card-header ");
+                        if (title.innerText.indexOf(input) > -1) {
+                            cards[i].style.display = "";
+                        } else {
+                            cards[i].style.display = "none";
+                        }
+                    }
+                }
+                function alldiseaseFunction() {
+                    var input, filter, cards, cardContainer, h5, title, i;
+
+                    cardContainer = document.getElementById("myItems");
+                    cards = cardContainer.getElementsByClassName("card");
+                    for (i = 0; i < cards.length; i++) {
+                        title = cards[i].querySelector(".card-header ");
+
+                        cards[i].style.display = "";
+
+                    }
+                }
+
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

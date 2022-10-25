@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Set heights of the grid so .sidenav can be 100% (adjust as needed) */
+        #myFilter {
+            box-sizing: border-box;
+            width: 50%;
+            padding: 10px;
+            margin-left: 20%;
+        }
+
+        .row.content {
+            height: 670px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            background-color: #262b3e;
+            height: 100%;
+            position: fixed;
+        }
+
+        /* On small screens, set height to 'auto' for the grid */
+        @media screen and (max-width: 767px) {
+            .row.content {
+                height: auto;
+            }
+        }
+
+        body {
+
+            background-color: #edf2fb;
+
+        }
+
+        .card {
+            border-radius: 6px;
+            background: lightgrey;
+            border-style: solid;
+            border-color: #264653;
+            width: 83%;
+            height: 50px;
+            padding-top: 10px;
+            margin-left: 70px;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+
+
+
+        .card-header {
+
+            background: linear-gradient(60deg, #288c6c, #4ea752);
+            border-style: solid;
+            border-color: #264653;
+            border-radius: 6px;
+            position: relative;
+            background: #264653;
+            width: 20%;
+            height: 40px;
+            float: left;
+            font-size: 20px;
+            margin-top: -7px;
+            padding-top: 5px;
+            color: white;
+            text-align: center;
+            margin-right: 10px;
+            margin-left: 5px;
+
+        }
+
+
+
+
+
+
+
+        li {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #8b92a9;
+        }
+
+        p {
+            font-size: 20px;
+            color: #a9afbbd1;
+        }
+
+        #event1 {
+            background: linear-gradient(60deg, #029eb1, #25b1c3);
+            width: 70px;
+            height: 70px;
+            float: left;
+            font-size: 30px;
+            margin-top: 30px;
+            padding-top: 0px;
+
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+        }
+
+        #disease:active {
+            background: rgb(3, 80, 32);
+        }
+
+
+        li.active>a {
+            background: linear-gradient(60deg, #7b1fa2, #913f9e);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav li:not(.active) a {
+            color: #a9afbbd1;
+        }
+
+        svg {
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        .col-sm-10 {
+            margin-left: 16%;
+        }
+
+        .card-body {
+            font-weight: bold;
+            font-size: 20px;
+            color: black;
+
+        }
+
+        #disease,
+        #speech {
+            background: linear-gradient(60deg, #288c6c, #4ea752);
+            color: white;
+            margin-right: 10px;
+            border-radius: 5px;
+            margin-left: 10px;
+            width: 100px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #speech {
+            width: 150px;
+            margin-left: 9%;
+            margin-bottom: 10px;
+            background: linear-gradient(60deg, #d22824, #da3a36);
+            margin-top: 20px
+        }
+
+        img {
+            margin: 0;
+            width: 120px;
+            height: 70px
+        }
+        /* /-----------Navbar----------/ */
+
+        nav {
+            background-color: rgb(36, 41, 46);
+            overflow: auto;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .blank {
+            display: inline;
+            min-width: 180px;
+        }
+
+        .nav-left {
+            align-items: center;
+            display: flex;
+            padding-left: 20px;
+        }
+
+        nav a,
+        i {
+            color: white;
+            padding: 14px 10px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        nav input[type=text] {
+            border: none;
+            height: 4.5vh;
+            width: 200px;
+
+            background-color: rgb(64 68 72);
+        }
+
+        /* /-----------Navbar Ends----------/ */
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar" style="background-color: rgb(36, 41, 46)">
+
+        <img style="padding-left: 20px;"
+            src="https://firebasestorage.googleapis.com/v0/b/opdonthego-47eec.appspot.com/o/logo1.png?alt=media&token=ab99d5ea-780c-4cac-9dad-a85e1d179357">
+        <div class="blank"></div>
+
+        <li style="float: right; list-style-type: none; padding-right: 20px;"><a href="{% url 'logout' %}">LOGOUT</a></li>
+    </nav>
+
+
+    <div class="container-fluid " >
+        <div class="row content">
+
+
+
+            <br>
+            <div class="col-sm-9" style="margin-left:100px">
+                <p style="font-weight:bold; color:#264653;">PATIENTS</p>
+                <div class="row" style="margin-bottom:15px;" id="myItems">
+                    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()"
+                        placeholder="Search for names..">
+                    <button type="button" id="speech" onclick="runSpeechRecognition()">Speech to
+                        Text</button>&nbsp;<span id="action" style="color:black;"></span><br>
+
+                    <button type="button" id="disease" value="D"  onclick="alldiseaseFunction()">ALL
+                        PATIENTS</button>
+
+
+                    <button type="button" id="disease" value="D" onclick="diseaseFunction('D')">Diabetes</button>
+                    <button type="button" id="disease" value="O" onclick="diseaseFunction('O')">Obesity</button>
+                    <button type="button" id="disease" value="S" onclick="diseaseFunction('S')">Heart Stroke</button>
+                    <button type="button" id="disease" value="H" onclick="diseaseFunction('H')">High BP</button>
+                    <button type="button" id="disease" value="T" onclick="diseaseFunction('T')">Stent</button>
+                    <button type="button" id="disease" value="C" onclick="diseaseFunction('C')">CKD</button>
+                    <button type="button" id="disease" value="L" onclick="diseaseFunction('L')">Liver</button>
+                    <button type="button" id="disease" value="B" onclick="diseaseFunction('B')">Bypass</button>
+                    <div>
+
+                        <a href="{% url 'secondarypatient' %}" {%if flag%} style="display:none;  " {%endif%}>
+                            <button type="submit" style="background:#4682B4; height:50px; width:165px;" id="disease" value>SECONDARY PATIENTS</button>
+                        </a>
+                    </div>
+                    {%for name,id in data%}
+                    <div class="row">
+                        <div class="col-sm-1 "></div>
+                        <div class="col-sm-10 ">
+
+                            <a href="{% url 'patientdetails' ID=id %}" style="text-decoration:none;">
+                                <div class="card" id="card1">
+                                    <div class="card-header ">{{id}}</div>
+                                    <div class="card-body " id="card-b">{{name}}</div>
+                                </div>
+                            </a>
+                            {%if flag%}
+                            <form action="deletesecondary" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" value="{{id}}" name="id">
+                                <input type="hidden" value="{{name}}" name="name">
+                                <button class="btn" type="submit"
+                                    style="float:right; margin-top: -45px; margin-left:150px;
+             background: linear-gradient(60deg, #029eb1, #25b1c3); color:white; "
+                                    value="{{url}}">
+                                    DELETE</button>
+                            </form>
+                            {%endif%}
+
+                        </div>
+                    </div>
+                    {%endfor%}
+
+
+                    <div class="col-sm-1 "></div>
+                </div>
+
+                <script>
+                    function runSpeechRecognition() {
+                        // get output div reference
+
+                        var action = document.getElementById("action");
+                        // new speech recognition object
+                        var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+                        var recognition = new SpeechRecognition();
+
+                        // This runs when the speech recognition service starts
+                        recognition.onstart = function () {
+                            action.innerHTML = "<small>listening, please speak...</small>";
+                        };
+
+                        recognition.onspeechend = function () {
+                            action.innerHTML = "<small>stopped listening, hope you are done...</small>";
+                            recognition.stop();
+                        };
+
+                        // This runs when the speech recognition service returns result
+                        recognition.onresult = function (event) {
+                            var transcript = event.results[0][0].transcript;
+                            var confidence = event.results[0][0].confidence;
+                            var input, filter, cards, cardContainer, title, i;
+                            action.innerHTML = "<small>" + transcript + "</small>";
+                            input = event.results[0][0].transcript;
+                            filter = input.toUpperCase();
+                            cardContainer = document.getElementById("myItems");
+                            cards = cardContainer.getElementsByClassName("card");
+                            for (i = 0; i < cards.length; i++) {
+                                title = cards[i].querySelector(".card-body ");
+                                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                                    cards[i].style.display = "";
+                                } else {
+                                    cards[i].style.display = "none";
+                                }
+                            }
+                        };
+                        recognition.start();
+
+                    };
+
+
+                    // start recognition
+
+                    function myFunction() {
+                        var input, filter, cards, cardContainer, h5, title, i;
+                        input = document.getElementById("myFilter");
+                        filter = input.value.toUpperCase();
+                        cardContainer = document.getElementById("myItems");
+                        cards = cardContainer.getElementsByClassName("card");
+                        for (i = 0; i < cards.length; i++) {
+                            title = cards[i].querySelector(".card-body ");
+                            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                                cards[i].style.display = "";
+                            } else {
+                                cards[i].style.display = "none";
+                            }
+                        }
+                    }
+                    function diseaseFunction(diseases) {
+                        var input, filter, cards, cardContainer, h5, title, i;
+                        input = diseases;
+                        cardContainer = document.getElementById("myItems");
+                        cards = cardContainer.getElementsByClassName("card");
+                        for (i = 0; i < cards.length; i++) {
+                            title = cards[i].querySelector(".card-header ");
+                            if (title.innerText.indexOf(input) > -1) {
+                                cards[i].style.display = "";
+                            } else {
+                                cards[i].style.display = "none";
+                            }
+                        }
+                    }
+
+                    function alldiseaseFunction() {
+                        var input, filter, cards, cardContainer, h5, title, i;
+
+                        cardContainer = document.getElementById("myItems");
+                        cards = cardContainer.getElementsByClassName("card");
+                        for (i = 0; i < cards.length; i++) {
+                            title = cards[i].querySelector(".card-header ");
+
+                            cards[i].style.display = "";
+
+                        }
+                    }
+
+                </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title> </title>
+    <style>
+      @page {
+        size: a4 portrait;
+        @frame header_frame {
+          /* Static Frame */
+          -pdf-frame-content: header_content;
+          left: 50pt;
+          width: 512pt;
+          top: 20pt;
+          height: 70pt;
+        }
+        @frame content_frame {
+          /* Content Frame */
+          left: 50pt;
+          width: 512pt;
+          top: 90pt;
+          height: 632pt;
+        }
+        @frame footer_frame {
+          /* Another static Frame */
+          -pdf-frame-content: footer_content;
+          left: 50pt;
+          width: 512pt;
+          top: 820pt;
+          height: 20pt;
+        }
+      }
+
+      table { -pdf-keep-with-next: true; }
+      p { margin: 0; -pdf-keep-with-next: true; }
+
+      p {
+        font-family: "Times New Roman", Times, serif;
+        margin: -10px;
+      }
+      label {
+        color: grey;
+        font-size: 35px;
+      }
+
+      .patientdet {
+        margin-left: 10px;
+        font-size: 20px;
+      }
+
+      .hosp {
+        font-size: 25px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header_content">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/opdonthego-47eec.appspot.com/o/logo1.png?alt=media&token=ab99d5ea-780c-4cac-9dad-a85e1d179357"
+        style="height: 50px; width: 75px"
+      />
+      <p class="hosp">Hospital name</p>
+    </div>
+
+    <div class="patientdet">
+      <b
+        ><p>Name: {{Name}}</p>
+        <p>Patient ID: {{ID}}</p>
+        <p>Age/Gender: {{Age}} / {{Sex}}</p>
+      </b>
+      <br />
+      <p><b> Medical Details:</b></p>
+      <p>RT-PCR: {{RTPCR}}</p>
+      <p>Past/Existing Health Problems: {{Past}}</p>
+      <p>Date of first Symptom: {{Firstsymp}}</p>
+      <p>Symptoms: {{Symptoms}}</p>
+      <br />
+      <p>HRCT-CT Score: {{hrct}}</p>
+      <p>CRP Values: {{CRP}}</p>
+      <br />
+      <p><b>Investigations:</b></p>
+      <p style="padding-left: 30px">Hb:</p>
+      <p style="padding-left: 30px">TLC:</p>
+      <p style="padding-left: 30px">Nutrophils:</p>
+      <p style="padding-left: 30px">Lynphosities:</p>
+      <p style="padding-left: 30px">Platlet Count:</p>
+      <p style="padding-left: 30px">RDW:</p>
+      <p style="padding-left: 30px">ESR:</p>
+      <br />
+      <br />
+      <p><b>SpO2 Reading:</b></p>
+      <table>
+        <tr style="border: 1px solid black; padding-top: 5px; font-size: 15px">
+          <th>Day1</th>
+          <th>Day2</th>
+          <th>Day3</th>
+          <th>Day4</th>
+          <th>Day5</th>
+          <th>Day6</th>
+          <th>Day7</th>
+        </tr>
+        <tr
+          style="
+            border: 1px solid black;
+            padding-top: 5px;
+            font-size: 15px;
+            text-align: center;
+          "
+        >
+          <td>{{day1}}</td>
+          <td>{{day2}}</td>
+          <td>{{day3}}</td>
+          <td>{{day4}}</td>
+          <td>{{day5}}</td>
+          <td>{{day6}}</td>
+          <td>{{day7}}</td>
+        </tr>
+      </table>
+      <br />
+      <table>
+        <tr style="border: 1px solid black; padding-top: 5px; font-size: 15px">
+          <th>Day8</th>
+          <th>Day9</th>
+          <th>Day10</th>
+          <th>Day11</th>
+          <th>Day12</th>
+          <th>Day13</th>
+          <th>Day14</th>
+        </tr>
+        <tr
+          style="
+            border: 1px solid black;
+            padding-top: 5px;
+            font-size: 15px;
+            text-align: center;
+          "
+        >
+          <td>{{day8}}</td>
+          <td>{{day9}}</td>
+          <td>{{day10}}</td>
+          <td>{{day11}}</td>
+          <td>{{day12}}</td>
+          <td>{{day13}}</td>
+          <td>{{day14}}</td>
+        </tr>
+      </table>
+
+      {%for i,no in combilis%}
+      <br />
+      <p><b>Prescription {{no}}</b></p>
+      <table style="border: 1px solid black; padding-top: 5px">
+        <tr style="font-size: 15px">
+          <th>Medicine</th>
+          <th>Power(in mg)</th>
+          <th>Dosage</th>
+          <th>Notes</th>
+        </tr>
+        {%for medicine,mg,time,notes in i %}
+        <tr style="font-size: 15px">
+          <td>{{medicine}}</td>
+          <td>{{mg}}</td>
+          <td>{{time}}</td>
+          <td>{{notes}}</td>
+        </tr>
+         {%endfor%}
+
+
+      </table>
+{%endfor%}
+
+
+
+
+      <br />
+
+    </div>
+    <div id="footer_content" style="font-size: 15px; text-align:center">(c) - page <pdf:pagenumber>
+        of <pdf:pagecount>
+    </div>
+  </body>
+</html>
